@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: point at the real domain once it is registered.
+Sitemap: https://TODO-your-domain.com/sitemap.xml

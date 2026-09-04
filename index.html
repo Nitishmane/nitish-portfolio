@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-theme="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nitish Mane — Portfolio</title>
+
+<!-- TODO: update these once the domain is live -->
+<meta name="description" content="Nitish Mane — TODO: one-line description of what you do.">
+<link rel="canonical" href="https://TODO-your-domain.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nitish Mane — Portfolio">
+<meta property="og:description" content="TODO: one-line description of what you do.">
+<meta property="og:url" content="https://TODO-your-domain.com/">
+<meta property="og:image" content="https://TODO-your-domain.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="/styles.css">
+
+<script>
+  // Set theme before first paint to avoid a flash of the wrong background.
+  try {
+    var t = localStorage.getItem('theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="/">NM</a>
+    <ul class="nav__list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></g></svg>
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <p class="hero__eyebrow reveal">Based in <span class="ph">TODO: City, Country</span></p>
+    <h1 class="hero__title reveal">
+      Nitish Mane —<br>
+      <em><span class="ph">TODO: what you do</span></em>
+    </h1>
+    <p class="hero__lede reveal">
+      <span class="ph">TODO: Two or three sentences on what you build, who you build it for,
+      and what you are looking for next. This is the only paragraph most visitors read all
+      the way through, so make it specific rather than broad.</span>
+    </p>
+    <div class="hero__actions reveal">
+      <a class="btn btn--primary" href="#projects">View work</a>
+      <a class="btn" href="/assets/resume.pdf">Résumé (PDF)</a>
+    </div>
+    <ul class="hero__links reveal">
+      <li><a href="https://github.com/Nitishmane">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/TODO">LinkedIn</a></li>
+      <li><a href="mailto:TODO@example.com">Email</a></li>
+    </ul>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about" class="section">
+    <h2 class="section__title reveal"><span class="section__num">01</span> About</h2>
+    <div class="prose reveal">
+      <p class="ph">TODO: A short paragraph in your own voice. What you care about technically,
+      how you got here, what kind of problems you like. Two paragraphs maximum.</p>
+      <p class="ph">TODO: Optional second paragraph — outside work, communities, writing, speaking.</p>
+    </div>
+    <div class="skills reveal">
+      <div class="skills__group">
+        <h3>Languages</h3>
+        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+      </div>
+      <div class="skills__group">
+        <h3>Frameworks</h3>
+        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+      </div>
+      <div class="skills__group">
+        <h3>Infrastructure</h3>
+        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ══ -->
+  <section id="experience" class="section">
+    <h2 class="section__title reveal"><span class="section__num">02</span> Experience</h2>
+    <ol class="timeline">
+      <!-- Duplicate one <li> per role, newest first. -->
+      <li class="role reveal">
+        <div class="role__when"><span class="ph">TODO 2024 — Present</span></div>
+        <div class="role__what">
+          <h3 class="role__title"><span class="ph">TODO: Job title</span></h3>
+          <p class="role__org"><span class="ph">TODO: Company</span></p>
+          <ul class="role__points">
+            <li class="ph">TODO: An accomplishment with a number attached to it.</li>
+            <li class="ph">TODO: A system you owned and what it did.</li>
+            <li class="ph">TODO: Something that shows scope or collaboration.</li>
+          </ul>
+          <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        </div>
+      </li>
+      <li class="role reveal">
+        <div class="role__when"><span class="ph">TODO 2022 — 2024</span></div>
+        <div class="role__what">
+          <h3 class="role__title"><span class="ph">TODO: Job title</span></h3>
+          <p class="role__org"><span class="ph">TODO: Company</span></p>
+          <ul class="role__points">
+            <li class="ph">TODO: An accomplishment with a number attached to it.</li>
+            <li class="ph">TODO: A system you owned and what it did.</li>
+          </ul>
+          <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ══ PROJECTS ══ -->
+  <section id="projects" class="section">
+    <h2 class="section__title reveal"><span class="section__num">03</span> Selected projects</h2>
+    <div class="cards">
+      <!-- Duplicate one <article> per project. Three to six is the right number. -->
+      <article class="card reveal">
+        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
+        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
+        inside it. Two sentences.</p>
+        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <div class="card__links">
+          <a href="#">Source</a>
+          <a href="#">Live</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
+        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
+        inside it. Two sentences.</p>
+        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <div class="card__links">
+          <a href="#">Source</a>
+          <a href="#">Live</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
+        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
+        inside it. Two sentences.</p>
+        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <div class="card__links">
+          <a href="#">Source</a>
+          <a href="#">Live</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact" class="section section--contact">
+    <h2 class="section__title reveal"><span class="section__num">04</span> Contact</h2>
+    <p class="contact__lede reveal">
+      <span class="ph">TODO: One line — what you want to hear about, and how fast you reply.</span>
+    </p>
+    <a class="contact__mail reveal" href="mailto:TODO@example.com">TODO@example.com</a>
+    <ul class="hero__links reveal">
+      <li><a href="https://github.com/Nitishmane">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/TODO">LinkedIn</a></li>
+      <li><a href="/assets/resume.pdf">Résumé</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year">2026</span> Nitish Mane</p>
+  <p>Built as static HTML · deployed on Cloudflare Pages</p>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

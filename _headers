@@ -1,0 +1,19 @@
+# Cloudflare Pages — response headers. Syntax: a path pattern, then indented headers.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  # 'unsafe-inline' is required by the pre-paint theme script in <head> and the
+  # inline <style> in 404.html. Tighten to hashes if those ever stop changing.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# Fingerprint-free assets: revalidate so edits ship immediately.
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+/main.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800
