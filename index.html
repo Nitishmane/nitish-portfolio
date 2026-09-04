@@ -48,6 +48,7 @@
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" role="presentation"></div>
 
 <header class="site-header">
   <nav class="nav" aria-label="Primary">
@@ -70,14 +71,18 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <p class="hero__eyebrow reveal">San Francisco Bay Area</p>
+    <p class="hero__status reveal">
+      <span class="status-dot" aria-hidden="true"></span>
+      Staff Infrastructure Engineer at Philo &middot; San Francisco Bay Area
+    </p>
     <h1 class="hero__title reveal">Nitish Mane</h1>
+    <p class="hero__statement reveal">
+      I build and run the cloud platforms behind live video, connected vehicles, and data products.
+    </p>
     <p class="hero__lede reveal">
-      I build and run the cloud platforms behind live video, connected vehicles, and data
-      products. Currently Staff Infrastructure Engineer at Philo, where I built HeyClaude,
-      an AI SRE agent that debugs production alerts on its own. Ten years across AWS, GCP, Azure,
-      and OCI, most of it spent making Kubernetes, Terraform, and observability boring enough
-      that nobody has to think about them.
+      At Philo I built HeyClaude, an AI SRE agent that debugs production alerts on its own.
+      Ten years across AWS, GCP, Azure, and OCI, most of it spent making Kubernetes, Terraform,
+      and observability boring enough that nobody has to think about them.
     </p>
     <div class="hero__actions reveal">
       <a class="btn btn--primary" href="#work">View work</a>
@@ -411,7 +416,8 @@
 
 <footer class="site-footer">
   <p>© <span id="year">2026</span> Nitish Mane</p>
-  <p>Built as static HTML · deployed on Cloudflare Pages</p>
+  <p>Hand-written HTML and CSS, no framework. Set in Instrument Serif and Inter,
+     deployed on <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>.</p>
 </footer>
 
 <script src="/main.js"></script>
