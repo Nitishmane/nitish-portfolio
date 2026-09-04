@@ -1,0 +1,9 @@
+# Files in this directory that must NOT be published.
+# Cloudflare Workers static assets uploads the whole directory, unlike Pages,
+# which skips dotfiles on its own. Without this, .git/ is served publicly.
+.git
+.gitignore
+.assetsignore
+.tools
+README.md
+wrangler.jsonc

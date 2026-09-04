@@ -1,11 +1,14 @@
 # nitish-portfolio
 
 Personal portfolio. Static HTML/CSS/JS with **no build step**, deployed on
-Cloudflare Pages from this GitHub repository.
+Cloudflare Workers static assets from this GitHub repository.
 
 ```
-Visitor → Cloudflare DNS → Cloudflare Pages → this GitHub repo (main)
+Visitor → Cloudflare DNS → Cloudflare Workers (static assets) → this GitHub repo (main)
 ```
+
+Live at `nitish-portfolio.manenitish06.workers.dev` until the custom domain is
+attached.
 
 ## Files
 
@@ -19,7 +22,9 @@ Visitor → Cloudflare DNS → Cloudflare Pages → this GitHub repo (main)
 | `_redirects` | Vanity shortlinks like `/github` (Pages-specific) |
 | `robots.txt`, `sitemap.xml` | Search indexing |
 | `assets/` | `favicon.svg`, `og.png` |
-| `.tools/` | Source for the OG image; dot-prefixed, so Pages does not deploy it |
+| `.tools/` | Source for the OG image; excluded from the deploy by `.assetsignore` |
+| `.assetsignore` | Files that must not be published, `.git` above all |
+| `wrangler.jsonc` | Worker name and the 404 handling Pages would have done for free |
 
 ## Local preview
 
@@ -41,6 +46,20 @@ One-time setup, in the Cloudflare dashboard:
    - Build command: *(empty)*
    - Build output directory: **`/`**
 4. **Save and Deploy**
+
+### Workers static assets, and why the two extra files exist
+
+The dashboard may create this as a **Worker** rather than a Pages project. The
+two behave differently in ways that matter here:
+
+| | Pages | Workers static assets |
+| --- | --- | --- |
+| Dotfiles (`.git/`) | skipped automatically | **uploaded and served** unless `.assetsignore` excludes them |
+| `404.html` | served automatically | only with `not_found_handling: "404-page"` |
+| `_headers`, `_redirects` | supported | supported |
+
+`.assetsignore` and `wrangler.jsonc` cover both gaps. Do not delete them: without
+`.assetsignore` the entire `.git` directory becomes publicly fetchable.
 
 Every push to `main` then redeploys automatically. Pull requests get their own
 preview URL. The production site lives at `nitish-portfolio.pages.dev` until a
