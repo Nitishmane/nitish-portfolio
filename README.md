@@ -42,25 +42,56 @@ One-time setup, in the Cloudflare dashboard:
 4. **Save and Deploy**
 
 Every push to `main` then redeploys automatically. Pull requests get their own
-preview URL. The production site lives at `<project-name>.pages.dev` until a
-custom domain is attached.
+preview URL. The production site lives at `nitish-portfolio.pages.dev` until a
+custom domain is attached (see below).
 
-## Deploy: custom domain (once registered)
+## Deploy: custom domain — nitishmane.dev (registered at Name.com)
 
-Register the domain, then:
+The domain is registered at Name.com; DNS moves to Cloudflare so that Pages can
+manage the records and issue TLS.
 
-1. **Cloudflare dashboard → Add a site** → enter the domain → free plan
-2. Cloudflare shows two nameservers; set them at the registrar. Propagation is
-   usually minutes, occasionally up to 24h.
-3. Once the zone is active: **Workers & Pages → your project → Custom domains →
-   Set up a custom domain** → add `example.com`, then repeat for `www.example.com`.
-   Pages creates the DNS records itself — do **not** hand-create A/CNAME records for it.
-4. TLS is issued automatically. Under **SSL/TLS**, set encryption mode to **Full (strict)**.
-5. Pick one canonical host and redirect the other with a **Redirect Rule**
-   (e.g. `www.example.com/*` → `https://example.com/$1`, 301).
+**1. Add the zone to Cloudflare**
 
-Then update the domain placeholders in `index.html` (canonical + Open Graph),
-`robots.txt`, and `sitemap.xml`.
+Cloudflare dashboard → **Add a site** → `nitishmane.dev` → Free plan. Cloudflare
+scans existing records and shows you two assigned nameservers, e.g.
+`xxx.ns.cloudflare.com` / `yyy.ns.cloudflare.com`.
+
+**2. Repoint the nameservers at Name.com**
+
+Name.com → **My Domains** → `nitishmane.dev` → **Nameservers** → *Manage
+Nameservers*. Remove the Name.com defaults (`ns1.name.com` … `ns4.name.com`) and
+enter the two Cloudflare nameservers. Save.
+
+Propagation is usually 5–60 minutes. Cloudflare emails you when the zone goes
+active; `dig NS nitishmane.dev +short` confirms it from the terminal.
+
+**3. Attach the domain to the Pages project**
+
+Workers & Pages → `nitish-portfolio` → **Custom domains** → *Set up a custom
+domain*:
+
+- add `nitishmane.dev`
+- add `www.nitishmane.dev`
+
+Pages creates the DNS records itself — do **not** hand-create A or CNAME records
+for these, and delete any parking records Name.com left behind.
+
+**4. TLS and canonical host**
+
+- **SSL/TLS → Overview**: set encryption mode to **Full (strict)**.
+- **SSL/TLS → Edge Certificates**: enable **Always Use HTTPS**.
+- `.dev` is on the HSTS preload list, so browsers *require* HTTPS for this
+  domain — there is no working http:// fallback. That is fine here, but it means
+  the certificate must be live before the site loads at all.
+- Canonicalize on the apex: **Rules → Redirect Rules** → new rule,
+  `Hostname equals www.nitishmane.dev` → dynamic redirect to
+  `concat("https://nitishmane.dev", http.request.uri.path)`, status **301**.
+
+**5. Optional — email at the domain**
+
+Cloudflare **Email Routing** gives you `hello@nitishmane.dev` forwarding to a
+personal inbox for free, which is nicer on a portfolio than a raw Gmail address.
+It adds its own MX records automatically.
 
 ## Content checklist
 
@@ -76,4 +107,3 @@ rule in `styles.css` once real content is in.
 - [ ] Contact: email address
 - [ ] `assets/resume.pdf`
 - [ ] `assets/og.png` (1200×630 social preview image)
-- [ ] Replace `TODO-your-domain.com` everywhere
