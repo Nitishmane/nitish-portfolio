@@ -1,5 +1,4 @@
 # Cloudflare Pages redirects. One rule per line: from  to  [status]
 # Vanity shortlinks; add more as needed.
-/resume        /assets/resume.pdf   302
-/cv            /assets/resume.pdf   302
+# /resume and /cv return once assets/resume.pdf exists.
 /github        https://github.com/Nitishmane   302

@@ -16,9 +16,10 @@ Visitor → Cloudflare DNS → Cloudflare Pages → this GitHub repo (main)
 | `main.js` | Theme toggle, scroll reveal, active nav link |
 | `404.html` | Served automatically by Pages on unknown paths |
 | `_headers` | Security headers + cache policy (Pages-specific) |
-| `_redirects` | Vanity shortlinks like `/resume` (Pages-specific) |
+| `_redirects` | Vanity shortlinks like `/github` (Pages-specific) |
 | `robots.txt`, `sitemap.xml` | Search indexing |
-| `assets/` | `favicon.svg`, `resume.pdf`, `og.png` |
+| `assets/` | `favicon.svg`, `og.png` |
+| `.tools/` | Source for the OG image; dot-prefixed, so Pages does not deploy it |
 
 ## Local preview
 
@@ -93,11 +94,26 @@ Cloudflare **Email Routing** gives you `hello@nitishmane.dev` forwarding to a
 personal inbox for free, which is nicer on a portfolio than a raw Gmail address.
 It adds its own MX records automatically.
 
-## Content checklist
+## Regenerating the social image
 
-Résumé content is in. Remaining:
+`assets/og.png` is a Chrome screenshot of `.tools/og-image.html`, so it uses the
+same fonts and palette as the site. After editing the role or blurb in that file:
 
-- [ ] `assets/resume.pdf`, without which the `/resume` shortlink and both Résumé buttons 404
-- [ ] `assets/og.png` (1200×630 social preview image)
+```sh
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=6000 \
+  --screenshot=assets/og.png --window-size=1200,630 \
+  "file://$PWD/.tools/og-image.html"
+```
+
+Chrome pulls Instrument Serif and Inter from Google Fonts at render time, so run
+it online; offline it silently falls back to Georgia and Helvetica.
+
+## Remaining
+
+- [ ] `assets/resume.pdf`. The résumé buttons and the `/resume` and `/cv`
+      shortlinks were removed rather than left pointing at a missing file.
+      Restore all three once a PDF is in place, ideally one without the phone
+      number and visa status on it.
 - [ ] Confirm the public contact address; Cloudflare Email Routing can forward
-      `hello@nitishmane.dev` to a personal inbox for free
+      `hello@nitishmane.dev` to a personal inbox for free.
