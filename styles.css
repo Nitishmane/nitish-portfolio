@@ -221,6 +221,24 @@ a:hover { text-decoration-color: currentColor; }
 }
 .role__points + .tags { margin-top: 1rem; }
 
+.role__place { color: var(--text-faint); }
+.role__note { color: var(--text-faint); font-style: italic; }
+.role__points strong { color: var(--text); font-weight: 500; }
+.role__points a { color: var(--text); text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+.role__points a:hover { color: var(--accent); }
+/* A label-only row (Judging, Certifications) has no heading to align against. */
+.role__what > .role__points:first-child,
+.role__what > .tags:first-child { padding-top: .3rem; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .875em;
+  padding: .1em .35em;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
 /* ── Project cards ── */
 .cards {
   display: grid; gap: 1.25rem;
@@ -237,7 +255,6 @@ a:hover { text-decoration-color: currentColor; }
 .card__title { font-size: 1.0625rem; }
 .card__body { color: var(--text-soft); font-size: .9375rem; }
 .card .tags { margin-top: auto; }
-.card__links { display: flex; gap: 1rem; font-size: .875rem; color: var(--text-soft); }
 
 /* ── Contact ── */
 .section--contact { text-align: center; }
@@ -260,13 +277,6 @@ a:hover { text-decoration-color: currentColor; }
   border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between;
   font-size: .8125rem; color: var(--text-faint);
-}
-
-/* ── Placeholder marker — delete .ph rules once content is real ── */
-.ph {
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--accent) 35%, transparent);
-  border-radius: 3px;
 }
 
 /* ── Scroll reveal ── */

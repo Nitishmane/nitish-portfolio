@@ -95,15 +95,9 @@ It adds its own MX records automatically.
 
 ## Content checklist
 
-Placeholders are marked `TODO` in the HTML and rendered with a highlighted
-background by the `.ph` class. Delete the `class="ph"` attributes and the `.ph`
-rule in `styles.css` once real content is in.
+Résumé content is in. Remaining:
 
-- [ ] Hero: location, role line, lede paragraph
-- [ ] Social links: LinkedIn URL, public contact email
-- [ ] About: two paragraphs + skills tags
-- [ ] Experience: one `<li class="role">` per role, newest first
-- [ ] Projects: three to six `<article class="card">`
-- [ ] Contact: email address
-- [ ] `assets/resume.pdf`
+- [ ] `assets/resume.pdf` — the `/resume` shortlink and both Résumé buttons 404 without it
 - [ ] `assets/og.png` (1200×630 social preview image)
+- [ ] Confirm the public contact address; Cloudflare Email Routing can forward
+      `hello@nitishmane.dev` to a personal inbox for free

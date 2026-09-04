@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nitish Mane — Portfolio</title>
+<title>Nitish Mane — Staff Infrastructure Engineer</title>
 
 <!-- Canonical host: nitishmane.dev (www redirects to it) -->
-<meta name="description" content="Nitish Mane — TODO: one-line description of what you do.">
+<meta name="description" content="Nitish Mane — Staff Infrastructure Engineer at Philo. Kubernetes, Terraform, and observability for live video, connected vehicles, and data platforms across AWS, GCP, Azure, and OCI.">
 <link rel="canonical" href="https://nitishmane.dev/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nitish Mane — Portfolio">
-<meta property="og:description" content="TODO: one-line description of what you do.">
+<meta property="og:title" content="Nitish Mane — Staff Infrastructure Engineer">
+<meta property="og:description" content="Staff Infrastructure Engineer at Philo. I build and run cloud platforms for live video, connected vehicles, and data products.">
 <meta property="og:url" content="https://nitishmane.dev/">
 <meta property="og:image" content="https://nitishmane.dev/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,6 +20,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nitish Mane",
+  "url": "https://nitishmane.dev/",
+  "jobTitle": "Staff Infrastructure Engineer",
+  "worksFor": { "@type": "Organization", "name": "Philo" },
+  "address": { "@type": "PostalAddress", "addressRegion": "CA", "addressCountry": "US" },
+  "sameAs": [
+    "https://github.com/Nitishmane",
+    "https://www.linkedin.com/in/nitish-mane/"
+  ]
+}
+</script>
 
 <script>
   // Set theme before first paint to avoid a flash of the wrong background.
@@ -39,7 +55,8 @@
     <ul class="nav__list">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#speaking">Speaking</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
@@ -53,24 +70,26 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <p class="hero__eyebrow reveal">Based in <span class="ph">TODO: City, Country</span></p>
+    <p class="hero__eyebrow reveal">San Francisco Bay Area</p>
     <h1 class="hero__title reveal">
       Nitish Mane —<br>
-      <em><span class="ph">TODO: what you do</span></em>
+      <em>infrastructure at scale</em>
     </h1>
     <p class="hero__lede reveal">
-      <span class="ph">TODO: Two or three sentences on what you build, who you build it for,
-      and what you are looking for next. This is the only paragraph most visitors read all
-      the way through, so make it specific rather than broad.</span>
+      I build and run the cloud platforms behind live video, connected vehicles, and data
+      products. Currently Staff Infrastructure Engineer at Philo, where I built HeyClaude — an
+      AI SRE agent that debugs production alerts on its own. Ten years across AWS, GCP, Azure,
+      and OCI, most of it spent making Kubernetes, Terraform, and observability boring enough
+      that nobody has to think about them.
     </p>
     <div class="hero__actions reveal">
-      <a class="btn btn--primary" href="#projects">View work</a>
+      <a class="btn btn--primary" href="#work">View work</a>
       <a class="btn" href="/assets/resume.pdf">Résumé (PDF)</a>
     </div>
     <ul class="hero__links reveal">
       <li><a href="https://github.com/Nitishmane">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/TODO">LinkedIn</a></li>
-      <li><a href="mailto:TODO@example.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/nitish-mane/">LinkedIn</a></li>
+      <li><a href="mailto:manenitish06@gmail.com">Email</a></li>
     </ul>
   </section>
 
@@ -78,22 +97,53 @@
   <section id="about" class="section">
     <h2 class="section__title reveal"><span class="section__num">01</span> About</h2>
     <div class="prose reveal">
-      <p class="ph">TODO: A short paragraph in your own voice. What you care about technically,
-      how you got here, what kind of problems you like. Two paragraphs maximum.</p>
-      <p class="ph">TODO: Optional second paragraph — outside work, communities, writing, speaking.</p>
+      <p>
+        I work on the layer nobody sees until it breaks: clusters, networks, pipelines, and the
+        alerting that tells you which of them is on fire. That has meant standing up a sovereign
+        cloud region in Saudi Arabia from nothing, cutting $100k a month out of an over-provisioned
+        estate, and pulling infrastructure provisioning down from weeks to hours.
+      </p>
+      <p>
+        Lately I have been pointing LLMs at operations work — an agent that correlates ArgoCD,
+        Grafana, GitLab, PagerDuty, and Jira to root-cause incidents, and a diagnostic system that
+        reasons over vehicle telemetry in a graph database. Outside the day job I judge the CES
+        Innovation Awards and MLH hackathons, speak at infrastructure conferences, and write about
+        what it actually takes to operate platforms under real load.
+      </p>
     </div>
     <div class="skills reveal">
       <div class="skills__group">
         <h3>Languages</h3>
-        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <ul class="tags">
+          <li>Python</li><li>Go</li><li>Java</li><li>Bash</li><li>SQL</li><li>HCL</li>
+        </ul>
       </div>
       <div class="skills__group">
-        <h3>Frameworks</h3>
-        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <h3>Platform &amp; tooling</h3>
+        <ul class="tags">
+          <li>Kubernetes</li><li>Terraform</li><li>ArgoCD</li><li>Helm</li>
+          <li>Cluster API</li><li>GitLab CI</li><li>Atlantis</li>
+        </ul>
       </div>
       <div class="skills__group">
-        <h3>Infrastructure</h3>
-        <ul class="tags"><li class="ph">TODO</li><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+        <h3>Observability</h3>
+        <ul class="tags">
+          <li>Grafana</li><li>Prometheus</li><li>Thanos</li><li>VictoriaMetrics</li>
+          <li>OpenSLO / Sloth</li><li>PagerDuty</li>
+        </ul>
+      </div>
+      <div class="skills__group">
+        <h3>Cloud</h3>
+        <ul class="tags">
+          <li>AWS</li><li>GCP</li><li>Azure</li><li>OCI</li>
+        </ul>
+      </div>
+      <div class="skills__group">
+        <h3>Data &amp; storage</h3>
+        <ul class="tags">
+          <li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>Kafka</li>
+          <li>Redshift</li><li>Neo4j</li><li>S3 / ADLS / GCS</li><li>HDFS</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -102,83 +152,260 @@
   <section id="experience" class="section">
     <h2 class="section__title reveal"><span class="section__num">02</span> Experience</h2>
     <ol class="timeline">
-      <!-- Duplicate one <li> per role, newest first. -->
+
       <li class="role reveal">
-        <div class="role__when"><span class="ph">TODO 2024 — Present</span></div>
+        <div class="role__when">Mar 2025 — Present<br><span class="role__place">San Francisco, CA</span></div>
         <div class="role__what">
-          <h3 class="role__title"><span class="ph">TODO: Job title</span></h3>
-          <p class="role__org"><span class="ph">TODO: Company</span></p>
+          <h3 class="role__title">Staff Infrastructure Engineer</h3>
+          <p class="role__org">Philo</p>
           <ul class="role__points">
-            <li class="ph">TODO: An accomplishment with a number attached to it.</li>
-            <li class="ph">TODO: A system you owned and what it did.</li>
-            <li class="ph">TODO: Something that shows scope or collaboration.</li>
+            <li>Built <strong>HeyClaude</strong>, an AI SRE agent that autonomously debugs production alerts by correlating ArgoCD, Grafana, GitLab, PagerDuty, and Jira — cutting incident root-cause analysis from hours to minutes.</li>
+            <li>Shipped a read-only ArgoCD integration for it: an API proxy with path blocklisting and fail-closed secret scrubbing, giving the agent pod logs and app health without ever exposing Kubernetes Secrets.</li>
+            <li>Designed cross-VPC connectivity on Transit Gateway with dedicated ALB subnets and subnet-scoped routes, exposing only internal load balancers while isolating production compute and databases.</li>
+            <li>Deployed new EKS clusters (billing-test, loadgen, production) with Terraform, ArgoCD, external-dns, and cluster autoscaler; migrated services and validated video playback end to end.</li>
+            <li>Led the Grafana platform migration — data sources, plugins, dashboards, v12→v13 upgrade, automated RDS backups — and moved Grafana and ArgoCD behind internal-only load balancers.</li>
+            <li>Owned media pipeline observability across MediaConnect flows and MediaLive transcode channels for the live video ingest path.</li>
+            <li>Drove the migration to Okta + AWS IAM Identity Center: audited legacy IAM usage, closed permission gaps, and moved teams onto centralized, scoped-down access.</li>
           </ul>
-          <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+          <ul class="tags tags--sm">
+            <li>EKS</li><li>Terraform</li><li>ArgoCD</li><li>Grafana</li><li>Transit Gateway</li><li>MediaLive</li><li>Okta</li>
+          </ul>
         </div>
       </li>
+
       <li class="role reveal">
-        <div class="role__when"><span class="ph">TODO 2022 — 2024</span></div>
+        <div class="role__when">Feb 2022 — Mar 2025<br><span class="role__place">Newark, CA</span></div>
         <div class="role__what">
-          <h3 class="role__title"><span class="ph">TODO: Job title</span></h3>
-          <p class="role__org"><span class="ph">TODO: Company</span></p>
+          <h3 class="role__title">Staff Infrastructure Engineer, Cloud Platform</h3>
+          <p class="role__org">Lucid Motors</p>
           <ul class="role__points">
-            <li class="ph">TODO: An accomplishment with a number attached to it.</li>
-            <li class="ph">TODO: A system you owned and what it did.</li>
+            <li>Established the company's OCI infrastructure in the <code>me-jeddah-1</code> region from scratch to serve KSA Gov customers.</li>
+            <li>Architected Smart Diagnostics — an LLM system over Neo4j and Elasticsearch that diagnoses vehicle issues from telemetry.</li>
+            <li>Saved over <strong>$100k/month</strong> by removing over-provisioning and introducing archiving and optimization strategies.</li>
+            <li>Cut infrastructure provisioning from weeks to hours using Cluster API, ArgoCD, Terraform, and Atlantis.</li>
+            <li>Built a file-based SLA monitoring framework on OpenSLO standards with Sloth for SLI calculation of key services.</li>
+            <li>Deployed the vehicle pipeline collecting signal data from cars for near-real-time analysis by hardware engineers, backed by a multi-region MongoDB Atlas cluster.</li>
+            <li>Migrated vehicle data from InfluxDB to VictoriaMetrics, improving performance and cutting storage cost.</li>
+            <li>Implemented a postmortem culture adhering to Google SRE standards as part of the on-call rotation.</li>
           </ul>
-          <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
+          <ul class="tags tags--sm">
+            <li>OCI</li><li>Cluster API</li><li>VictoriaMetrics</li><li>Neo4j</li><li>MongoDB Atlas</li><li>OpenSLO</li>
+          </ul>
         </div>
       </li>
+
+      <li class="role reveal">
+        <div class="role__when">Jul 2019 — Feb 2022<br><span class="role__place">San Francisco, CA</span></div>
+        <div class="role__what">
+          <h3 class="role__title">Principal Site Reliability Engineer</h3>
+          <p class="role__org">Trifacta <span class="role__note">(acquired)</span></p>
+          <ul class="role__points">
+            <li>Supported <strong>100+ customers</strong> implementing, upgrading, and troubleshooting environments on-prem and across all major cloud platforms, including third-party integrations with identity providers, databases, and cloud filesystems.</li>
+            <li>Built AWS infrastructure integrated with Slack and Jenkins so engineers could trigger deploys from chat, reducing support ticket lifetime by <strong>40%</strong>.</li>
+            <li>Drove the Swagger 3.0 evaluation with the product team into a shipped feature, cutting API-related support tickets by <strong>20%</strong>.</li>
+            <li>Ran training and demos, and achieved a <strong>100% renewal rate</strong> on dedicated accounts.</li>
+          </ul>
+          <ul class="tags tags--sm"><li>AWS</li><li>Jenkins</li><li>Slack API</li><li>Swagger</li></ul>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Aug 2017 — Jul 2019<br><span class="role__place">Mountain View, CA</span></div>
+        <div class="role__what">
+          <h3 class="role__title">Senior DevOps Engineer</h3>
+          <p class="role__org">Waterline Data <span class="role__note">(acquired)</span></p>
+          <ul class="role__points">
+            <li>Managed and deployed Waterline products across <strong>30+ customer environments</strong> with end-to-end support.</li>
+            <li>Ran on-site and cloud POCs and delivered partner training in the US and India to 50+ support and sales engineers; built the product certification lab customers used to train their own staff.</li>
+            <li>Hired and trained a team in Croatia for L1/L2 support, who went on to handle <strong>80%</strong> of support cases.</li>
+          </ul>
+          <ul class="tags tags--sm"><li>Cloud POCs</li><li>Enablement</li><li>Team building</li></ul>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Oct 2015 — Sep 2017<br><span class="role__place">Phoenix, AZ</span></div>
+        <div class="role__what">
+          <h3 class="role__title">Hadoop Administrator — DevOps</h3>
+          <p class="role__org">American Express</p>
+          <ul class="role__points">
+            <li>Led an operations team of 15+ across India and the US.</li>
+            <li>Installed and maintained a MapR Hadoop ecosystem on-prem at a scale beyond <strong>8 petabytes</strong>.</li>
+            <li>Stood up Jenkins for release management, reducing deployment time by <strong>80%</strong>.</li>
+            <li>Built 24/7 alerting on Splunk and Nagios with email notification routing.</li>
+          </ul>
+          <ul class="tags tags--sm"><li>MapR Hadoop</li><li>Jenkins</li><li>Splunk</li><li>Nagios</li></ul>
+        </div>
+      </li>
+
     </ol>
   </section>
 
-  <!-- ══ PROJECTS ══ -->
-  <section id="projects" class="section">
-    <h2 class="section__title reveal"><span class="section__num">03</span> Selected projects</h2>
+  <!-- ══ SELECTED WORK ══ -->
+  <section id="work" class="section">
+    <h2 class="section__title reveal"><span class="section__num">03</span> Selected work</h2>
     <div class="cards">
-      <!-- Duplicate one <article> per project. Three to six is the right number. -->
+
       <article class="card reveal">
-        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
-        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
-        inside it. Two sentences.</p>
-        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
-        <div class="card__links">
-          <a href="#">Source</a>
-          <a href="#">Live</a>
-        </div>
+        <h3 class="card__title">HeyClaude — AI SRE agent</h3>
+        <p class="card__body">
+          A Claude-powered Slack assistant that takes a production alert and works it the way an
+          on-call engineer would: pulling deploy state from ArgoCD, metrics from Grafana, recent
+          changes from GitLab, and incident context from PagerDuty and Jira, then reporting a
+          probable root cause. Root-cause analysis dropped from hours to minutes.
+        </p>
+        <ul class="tags tags--sm"><li>Claude</li><li>Slack</li><li>ArgoCD</li><li>Grafana</li><li>PagerDuty</li></ul>
       </article>
+
       <article class="card reveal">
-        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
-        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
-        inside it. Two sentences.</p>
-        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
-        <div class="card__links">
-          <a href="#">Source</a>
-          <a href="#">Live</a>
-        </div>
+        <h3 class="card__title">Fail-closed ArgoCD proxy</h3>
+        <p class="card__body">
+          Giving an autonomous agent cluster access is a security problem before it is a features
+          problem. This read-only API proxy blocklists paths and scrubs secrets fail-closed, so
+          HeyClaude reads pod logs and application health while Kubernetes Secrets stay unreachable
+          even if the agent asks for them.
+        </p>
+        <ul class="tags tags--sm"><li>Go</li><li>Kubernetes</li><li>ArgoCD</li><li>Security</li></ul>
       </article>
+
       <article class="card reveal">
-        <h3 class="card__title"><span class="ph">TODO: Project name</span></h3>
-        <p class="card__body ph">TODO: What it does and the one interesting engineering decision
-        inside it. Two sentences.</p>
-        <ul class="tags tags--sm"><li class="ph">TODO</li><li class="ph">TODO</li></ul>
-        <div class="card__links">
-          <a href="#">Source</a>
-          <a href="#">Live</a>
-        </div>
+        <h3 class="card__title">Smart Diagnostics</h3>
+        <p class="card__body">
+          Vehicle fault diagnosis at Lucid built on an LLM reasoning over a Neo4j graph of vehicle
+          relationships and Elasticsearch telemetry, turning raw signal data into an explanation a
+          technician can act on.
+        </p>
+        <ul class="tags tags--sm"><li>LLM</li><li>Neo4j</li><li>Elasticsearch</li></ul>
       </article>
+
+      <article class="card reveal">
+        <h3 class="card__title">OCI sovereign region buildout</h3>
+        <p class="card__body">
+          Built Lucid's entire Oracle Cloud footprint in <code>me-jeddah-1</code> from nothing, to
+          serve KSA Gov customers under data-residency requirements — networking, clusters, CI/CD,
+          and image replication from AWS ECR.
+        </p>
+        <ul class="tags tags--sm"><li>OCI</li><li>Terraform</li><li>Data residency</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <h3 class="card__title">Provisioning: weeks → hours</h3>
+        <p class="card__body">
+          Replaced hand-rolled cluster builds with Cluster API, ArgoCD app-of-apps, Terraform, and
+          Atlantis, so a new environment became a merge request instead of a project. Cut
+          provisioning time from several weeks to a few hours.
+        </p>
+        <ul class="tags tags--sm"><li>Cluster API</li><li>ArgoCD</li><li>Atlantis</li></ul>
+      </article>
+
+      <article class="card reveal">
+        <h3 class="card__title">SLO framework on OpenSLO</h3>
+        <p class="card__body">
+          File-based SLA monitoring built on the OpenSLO standard with Sloth generating SLI
+          calculations, plus a Grafana file-provisioning framework that codified alerts, contact
+          points, and notification policies as reviewable config.
+        </p>
+        <ul class="tags tags--sm"><li>OpenSLO</li><li>Sloth</li><li>Prometheus</li><li>Grafana</li></ul>
+      </article>
+
     </div>
+  </section>
+
+  <!-- ══ SPEAKING & RECOGNITION ══ -->
+  <section id="speaking" class="section">
+    <h2 class="section__title reveal"><span class="section__num">04</span> Speaking &amp; recognition</h2>
+    <ol class="timeline">
+
+      <li class="role reveal">
+        <div class="role__when">Judging</div>
+        <div class="role__what">
+          <ul class="role__points">
+            <li>Judge, <a href="https://www.ces.tech/ces-innovation-awards/official-rules-of-the-ces-innovation-awards-2027-program/">CES Innovation Awards 2027</a></li>
+            <li>Judge, <a href="https://globalconnectivityawards.com/2026-judges">Global Connectivity Awards</a></li>
+            <li>Judge, <a href="https://awards.datacloudglobalcongress.com/speakers/nitish-mane">Datacloud Global Awards 2026</a> (Delinian, London) — the leading international program for data centre, cloud, edge, and global IT infrastructure</li>
+            <li>Hackathon judge, Major League Hacking — the world's largest collegiate hackathon league, powering events for 150,000+ developers a year</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Speaking · 2026</div>
+        <div class="role__what">
+          <ul class="role__points">
+            <li><a href="https://cloudxconf.com">CloudX 2026</a> — Expo Stage, Santa Clara Convention Center (Sept 2026)</li>
+            <li><a href="https://www.iacconf.com/iacconf-2026-rebrand">IaC Conf 2026</a> — “Infrastructure at Scale Using ArgoCD,” Builder Stage</li>
+            <li><a href="https://sreday.com/2026-san-francisco-q2/">SREday San Francisco Q2</a></li>
+            <li><a href="https://devopscon.io/speaker/nitish-mane/">DevOpsCon</a></li>
+            <li><a href="https://ai4.io/speakers/">Ai4 2026</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Writing &amp; media</div>
+        <div class="role__what">
+          <ul class="role__points">
+            <li>Author, <a href="https://platformengineering.com/features/invisible-by-design-what-it-takes-to-operate-platforms-under-real-load/">“Invisible by Design — What It Takes to Operate Platforms Under Real Load”</a>, Platform Engineering (Mar 2026)</li>
+            <li>Interviewed by <a href="https://aijourn.com/nitish-mane-on-architecting-cloud-infrastructure-for-ai-driven-connected-vehicles/">The AI Journal</a> on architecting cloud infrastructure for AI-driven connected vehicles (May 2026)</li>
+            <li>Featured in <a href="https://alltechmagazine.com/nitish-mane-on-speed-cost-reliability-in-modern-cloud-systems/">All Tech Magazine</a> on speed, cost, and reliability in modern cloud systems</li>
+            <li>First-prize winner, <a href="https://luma.com/zero-downtime">Zero Downtime Hackathon</a></li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <!-- ══ EDUCATION & CERTIFICATIONS ══ -->
+  <section id="education" class="section">
+    <h2 class="section__title reveal"><span class="section__num">05</span> Education &amp; certifications</h2>
+    <ol class="timeline">
+
+      <li class="role reveal">
+        <div class="role__when">Sep 2013 — May 2015</div>
+        <div class="role__what">
+          <h3 class="role__title">M.S. Computer Science</h3>
+          <p class="role__org">California State University, East Bay — Hayward, CA</p>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Jul 2008 — Jun 2012</div>
+        <div class="role__what">
+          <h3 class="role__title">B.E. Information Technology</h3>
+          <p class="role__org">University of Pune, India</p>
+        </div>
+      </li>
+
+      <li class="role reveal">
+        <div class="role__when">Certifications</div>
+        <div class="role__what">
+          <ul class="tags">
+            <li>GCP Associate Cloud Engineer</li>
+            <li>AWS Big Data — Specialty</li>
+            <li>AWS Solutions Architect — Associate</li>
+            <li>O'Reilly Apache Spark Developer</li>
+            <li>Cloudera Certified Administrator, Apache Hadoop</li>
+            <li>Cloudera Certified Developer, Apache Hadoop</li>
+            <li>Hortonworks HDP Certified Developer</li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
   </section>
 
   <!-- ══ CONTACT ══ -->
   <section id="contact" class="section section--contact">
-    <h2 class="section__title reveal"><span class="section__num">04</span> Contact</h2>
+    <h2 class="section__title reveal"><span class="section__num">06</span> Contact</h2>
     <p class="contact__lede reveal">
-      <span class="ph">TODO: One line — what you want to hear about, and how fast you reply.</span>
+      Happy to talk about platform engineering, agentic tooling for operations, or speaking at
+      your event. Email is the fastest way to reach me.
     </p>
-    <a class="contact__mail reveal" href="mailto:TODO@example.com">TODO@example.com</a>
+    <a class="contact__mail reveal" href="mailto:manenitish06@gmail.com">manenitish06@gmail.com</a>
     <ul class="hero__links reveal">
       <li><a href="https://github.com/Nitishmane">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/TODO">LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/nitish-mane/">LinkedIn</a></li>
       <li><a href="/assets/resume.pdf">Résumé</a></li>
     </ul>
   </section>
