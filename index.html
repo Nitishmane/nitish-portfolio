@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nitish Mane — Staff Infrastructure Engineer</title>
+<title>Nitish Mane · Staff Infrastructure Engineer</title>
 
 <!-- Canonical host: nitishmane.dev (www redirects to it) -->
-<meta name="description" content="Nitish Mane — Staff Infrastructure Engineer at Philo. Kubernetes, Terraform, and observability for live video, connected vehicles, and data platforms across AWS, GCP, Azure, and OCI.">
+<meta name="description" content="Nitish Mane is a Staff Infrastructure Engineer at Philo. Kubernetes, Terraform, and observability for live video, connected vehicles, and data platforms across AWS, GCP, Azure, and OCI.">
 <link rel="canonical" href="https://nitishmane.dev/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nitish Mane — Staff Infrastructure Engineer">
+<meta property="og:title" content="Nitish Mane · Staff Infrastructure Engineer">
 <meta property="og:description" content="Staff Infrastructure Engineer at Philo. I build and run cloud platforms for live video, connected vehicles, and data products.">
 <meta property="og:url" content="https://nitishmane.dev/">
 <meta property="og:image" content="https://nitishmane.dev/assets/og.png">
@@ -71,14 +71,11 @@
   <!-- ══ HERO ══ -->
   <section class="hero">
     <p class="hero__eyebrow reveal">San Francisco Bay Area</p>
-    <h1 class="hero__title reveal">
-      Nitish Mane —<br>
-      <em>infrastructure at scale</em>
-    </h1>
+    <h1 class="hero__title reveal">Nitish Mane</h1>
     <p class="hero__lede reveal">
       I build and run the cloud platforms behind live video, connected vehicles, and data
-      products. Currently Staff Infrastructure Engineer at Philo, where I built HeyClaude — an
-      AI SRE agent that debugs production alerts on its own. Ten years across AWS, GCP, Azure,
+      products. Currently Staff Infrastructure Engineer at Philo, where I built HeyClaude,
+      an AI SRE agent that debugs production alerts on its own. Ten years across AWS, GCP, Azure,
       and OCI, most of it spent making Kubernetes, Terraform, and observability boring enough
       that nobody has to think about them.
     </p>
@@ -104,7 +101,7 @@
         estate, and pulling infrastructure provisioning down from weeks to hours.
       </p>
       <p>
-        Lately I have been pointing LLMs at operations work — an agent that correlates ArgoCD,
+        Lately I have been pointing LLMs at operations work: an agent that correlates ArgoCD,
         Grafana, GitLab, PagerDuty, and Jira to root-cause incidents, and a diagnostic system that
         reasons over vehicle telemetry in a graph database. Outside the day job I judge the CES
         Innovation Awards and MLH hackathons, speak at infrastructure conferences, and write about
@@ -154,16 +151,16 @@
     <ol class="timeline">
 
       <li class="role reveal">
-        <div class="role__when">Mar 2025 — Present<br><span class="role__place">San Francisco, CA</span></div>
+        <div class="role__when">Mar 2025 – Present<br><span class="role__place">San Francisco, CA</span></div>
         <div class="role__what">
           <h3 class="role__title">Staff Infrastructure Engineer</h3>
           <p class="role__org">Philo</p>
           <ul class="role__points">
-            <li>Built <strong>HeyClaude</strong>, an AI SRE agent that autonomously debugs production alerts by correlating ArgoCD, Grafana, GitLab, PagerDuty, and Jira — cutting incident root-cause analysis from hours to minutes.</li>
+            <li>Built <strong>HeyClaude</strong>, an AI SRE agent that autonomously debugs production alerts by correlating ArgoCD, Grafana, GitLab, PagerDuty, and Jira, cutting incident root-cause analysis from hours to minutes.</li>
             <li>Shipped a read-only ArgoCD integration for it: an API proxy with path blocklisting and fail-closed secret scrubbing, giving the agent pod logs and app health without ever exposing Kubernetes Secrets.</li>
             <li>Designed cross-VPC connectivity on Transit Gateway with dedicated ALB subnets and subnet-scoped routes, exposing only internal load balancers while isolating production compute and databases.</li>
             <li>Deployed new EKS clusters (billing-test, loadgen, production) with Terraform, ArgoCD, external-dns, and cluster autoscaler; migrated services and validated video playback end to end.</li>
-            <li>Led the Grafana platform migration — data sources, plugins, dashboards, v12→v13 upgrade, automated RDS backups — and moved Grafana and ArgoCD behind internal-only load balancers.</li>
+            <li>Led the Grafana platform migration (data sources, plugins, dashboards, v12→v13 upgrade, automated RDS backups) and moved Grafana and ArgoCD behind internal-only load balancers.</li>
             <li>Owned media pipeline observability across MediaConnect flows and MediaLive transcode channels for the live video ingest path.</li>
             <li>Drove the migration to Okta + AWS IAM Identity Center: audited legacy IAM usage, closed permission gaps, and moved teams onto centralized, scoped-down access.</li>
           </ul>
@@ -174,13 +171,13 @@
       </li>
 
       <li class="role reveal">
-        <div class="role__when">Feb 2022 — Mar 2025<br><span class="role__place">Newark, CA</span></div>
+        <div class="role__when">Feb 2022 – Mar 2025<br><span class="role__place">Newark, CA</span></div>
         <div class="role__what">
           <h3 class="role__title">Staff Infrastructure Engineer, Cloud Platform</h3>
           <p class="role__org">Lucid Motors</p>
           <ul class="role__points">
             <li>Established the company's OCI infrastructure in the <code>me-jeddah-1</code> region from scratch to serve KSA Gov customers.</li>
-            <li>Architected Smart Diagnostics — an LLM system over Neo4j and Elasticsearch that diagnoses vehicle issues from telemetry.</li>
+            <li>Architected Smart Diagnostics, an LLM system over Neo4j and Elasticsearch that diagnoses vehicle issues from telemetry.</li>
             <li>Saved over <strong>$100k/month</strong> by removing over-provisioning and introducing archiving and optimization strategies.</li>
             <li>Cut infrastructure provisioning from weeks to hours using Cluster API, ArgoCD, Terraform, and Atlantis.</li>
             <li>Built a file-based SLA monitoring framework on OpenSLO standards with Sloth for SLI calculation of key services.</li>
@@ -195,7 +192,7 @@
       </li>
 
       <li class="role reveal">
-        <div class="role__when">Jul 2019 — Feb 2022<br><span class="role__place">San Francisco, CA</span></div>
+        <div class="role__when">Jul 2019 – Feb 2022<br><span class="role__place">San Francisco, CA</span></div>
         <div class="role__what">
           <h3 class="role__title">Principal Site Reliability Engineer</h3>
           <p class="role__org">Trifacta <span class="role__note">(acquired)</span></p>
@@ -210,7 +207,7 @@
       </li>
 
       <li class="role reveal">
-        <div class="role__when">Aug 2017 — Jul 2019<br><span class="role__place">Mountain View, CA</span></div>
+        <div class="role__when">Aug 2017 – Jul 2019<br><span class="role__place">Mountain View, CA</span></div>
         <div class="role__what">
           <h3 class="role__title">Senior DevOps Engineer</h3>
           <p class="role__org">Waterline Data <span class="role__note">(acquired)</span></p>
@@ -224,9 +221,9 @@
       </li>
 
       <li class="role reveal">
-        <div class="role__when">Oct 2015 — Sep 2017<br><span class="role__place">Phoenix, AZ</span></div>
+        <div class="role__when">Oct 2015 – Sep 2017<br><span class="role__place">Phoenix, AZ</span></div>
         <div class="role__what">
-          <h3 class="role__title">Hadoop Administrator — DevOps</h3>
+          <h3 class="role__title">Hadoop Administrator, DevOps</h3>
           <p class="role__org">American Express</p>
           <ul class="role__points">
             <li>Led an operations team of 15+ across India and the US.</li>
@@ -247,7 +244,7 @@
     <div class="cards">
 
       <article class="card reveal">
-        <h3 class="card__title">HeyClaude — AI SRE agent</h3>
+        <h3 class="card__title">HeyClaude: AI SRE agent</h3>
         <p class="card__body">
           A Claude-powered Slack assistant that takes a production alert and works it the way an
           on-call engineer would: pulling deploy state from ArgoCD, metrics from Grafana, recent
@@ -282,7 +279,7 @@
         <h3 class="card__title">OCI sovereign region buildout</h3>
         <p class="card__body">
           Built Lucid's entire Oracle Cloud footprint in <code>me-jeddah-1</code> from nothing, to
-          serve KSA Gov customers under data-residency requirements — networking, clusters, CI/CD,
+          serve KSA Gov customers under data-residency requirements: networking, clusters, CI/CD,
           and image replication from AWS ECR.
         </p>
         <ul class="tags tags--sm"><li>OCI</li><li>Terraform</li><li>Data residency</li></ul>
@@ -322,8 +319,8 @@
           <ul class="role__points">
             <li>Judge, <a href="https://www.ces.tech/ces-innovation-awards/official-rules-of-the-ces-innovation-awards-2027-program/">CES Innovation Awards 2027</a></li>
             <li>Judge, <a href="https://globalconnectivityawards.com/2026-judges">Global Connectivity Awards</a></li>
-            <li>Judge, <a href="https://awards.datacloudglobalcongress.com/speakers/nitish-mane">Datacloud Global Awards 2026</a> (Delinian, London) — the leading international program for data centre, cloud, edge, and global IT infrastructure</li>
-            <li>Hackathon judge, Major League Hacking — the world's largest collegiate hackathon league, powering events for 150,000+ developers a year</li>
+            <li>Judge, <a href="https://awards.datacloudglobalcongress.com/speakers/nitish-mane">Datacloud Global Awards 2026</a> (Delinian, London), the leading international program for data centre, cloud, edge, and global IT infrastructure</li>
+            <li>Hackathon judge, Major League Hacking, the world's largest collegiate hackathon league, powering events for 150,000+ developers a year</li>
           </ul>
         </div>
       </li>
@@ -332,8 +329,8 @@
         <div class="role__when">Speaking · 2026</div>
         <div class="role__what">
           <ul class="role__points">
-            <li><a href="https://cloudxconf.com">CloudX 2026</a> — Expo Stage, Santa Clara Convention Center (Sept 2026)</li>
-            <li><a href="https://www.iacconf.com/iacconf-2026-rebrand">IaC Conf 2026</a> — “Infrastructure at Scale Using ArgoCD,” Builder Stage</li>
+            <li><a href="https://cloudxconf.com">CloudX 2026</a>: Expo Stage, Santa Clara Convention Center (Sept 2026)</li>
+            <li><a href="https://www.iacconf.com/iacconf-2026-rebrand">IaC Conf 2026</a>: “Infrastructure at Scale Using ArgoCD,” Builder Stage</li>
             <li><a href="https://sreday.com/2026-san-francisco-q2/">SREday San Francisco Q2</a></li>
             <li><a href="https://devopscon.io/speaker/nitish-mane/">DevOpsCon</a></li>
             <li><a href="https://ai4.io/speakers/">Ai4 2026</a></li>
@@ -345,7 +342,7 @@
         <div class="role__when">Writing &amp; media</div>
         <div class="role__what">
           <ul class="role__points">
-            <li>Author, <a href="https://platformengineering.com/features/invisible-by-design-what-it-takes-to-operate-platforms-under-real-load/">“Invisible by Design — What It Takes to Operate Platforms Under Real Load”</a>, Platform Engineering (Mar 2026)</li>
+            <li>Author, <a href="https://platformengineering.com/features/invisible-by-design-what-it-takes-to-operate-platforms-under-real-load/">“Invisible by Design: What It Takes to Operate Platforms Under Real Load”</a>, Platform Engineering (Mar 2026)</li>
             <li>Interviewed by <a href="https://aijourn.com/nitish-mane-on-architecting-cloud-infrastructure-for-ai-driven-connected-vehicles/">The AI Journal</a> on architecting cloud infrastructure for AI-driven connected vehicles (May 2026)</li>
             <li>Featured in <a href="https://alltechmagazine.com/nitish-mane-on-speed-cost-reliability-in-modern-cloud-systems/">All Tech Magazine</a> on speed, cost, and reliability in modern cloud systems</li>
             <li>First-prize winner, <a href="https://luma.com/zero-downtime">Zero Downtime Hackathon</a></li>
@@ -362,18 +359,18 @@
     <ol class="timeline">
 
       <li class="role reveal">
-        <div class="role__when">Sep 2013 — May 2015</div>
+        <div class="role__when">Sep 2013 – May 2015<br><span class="role__place">Hayward, CA</span></div>
         <div class="role__what">
           <h3 class="role__title">M.S. Computer Science</h3>
-          <p class="role__org">California State University, East Bay — Hayward, CA</p>
+          <p class="role__org">California State University, East Bay</p>
         </div>
       </li>
 
       <li class="role reveal">
-        <div class="role__when">Jul 2008 — Jun 2012</div>
+        <div class="role__when">Jul 2008 – Jun 2012<br><span class="role__place">Pune, India</span></div>
         <div class="role__what">
           <h3 class="role__title">B.E. Information Technology</h3>
-          <p class="role__org">University of Pune, India</p>
+          <p class="role__org">University of Pune</p>
         </div>
       </li>
 
@@ -382,8 +379,8 @@
         <div class="role__what">
           <ul class="tags">
             <li>GCP Associate Cloud Engineer</li>
-            <li>AWS Big Data — Specialty</li>
-            <li>AWS Solutions Architect — Associate</li>
+            <li>AWS Big Data Specialty</li>
+            <li>AWS Solutions Architect Associate</li>
             <li>O'Reilly Apache Spark Developer</li>
             <li>Cloudera Certified Administrator, Apache Hadoop</li>
             <li>Cloudera Certified Developer, Apache Hadoop</li>

@@ -1,4 +1,4 @@
-# Cloudflare Pages — redirects. One rule per line: from  to  [status]
+# Cloudflare Pages redirects. One rule per line: from  to  [status]
 # Vanity shortlinks; add more as needed.
 /resume        /assets/resume.pdf   302
 /cv            /assets/resume.pdf   302

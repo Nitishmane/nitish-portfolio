@@ -11,7 +11,7 @@ Visitor → Cloudflare DNS → Cloudflare Pages → this GitHub repo (main)
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | The whole site — one page, five sections |
+| `index.html` | The whole site: one page, seven sections |
 | `styles.css` | Design tokens, layout, components, light/dark themes |
 | `main.js` | Theme toggle, scroll reveal, active nav link |
 | `404.html` | Served automatically by Pages on unknown paths |
@@ -22,7 +22,7 @@ Visitor → Cloudflare DNS → Cloudflare Pages → this GitHub repo (main)
 
 ## Local preview
 
-No toolchain needed — open `index.html` in a browser, or serve it so that
+No toolchain needed. Open `index.html` in a browser, or serve it so that
 root-absolute paths (`/styles.css`) resolve:
 
 ```sh
@@ -35,7 +35,7 @@ One-time setup, in the Cloudflare dashboard:
 
 1. **Workers & Pages → Create → Pages → Connect to Git**
 2. Authorize GitHub and pick `Nitishmane/nitish-portfolio`
-3. Build settings — this is a no-build site, so leave them empty:
+3. Build settings. This is a no-build site, so leave them empty:
    - Framework preset: **None**
    - Build command: *(empty)*
    - Build output directory: **`/`**
@@ -45,7 +45,7 @@ Every push to `main` then redeploys automatically. Pull requests get their own
 preview URL. The production site lives at `nitish-portfolio.pages.dev` until a
 custom domain is attached (see below).
 
-## Deploy: custom domain — nitishmane.dev (registered at Name.com)
+## Deploy: custom domain, nitishmane.dev (registered at Name.com)
 
 The domain is registered at Name.com; DNS moves to Cloudflare so that Pages can
 manage the records and issue TLS.
@@ -73,7 +73,7 @@ domain*:
 - add `nitishmane.dev`
 - add `www.nitishmane.dev`
 
-Pages creates the DNS records itself — do **not** hand-create A or CNAME records
+Pages creates the DNS records itself, so do **not** hand-create A or CNAME records
 for these, and delete any parking records Name.com left behind.
 
 **4. TLS and canonical host**
@@ -81,13 +81,13 @@ for these, and delete any parking records Name.com left behind.
 - **SSL/TLS → Overview**: set encryption mode to **Full (strict)**.
 - **SSL/TLS → Edge Certificates**: enable **Always Use HTTPS**.
 - `.dev` is on the HSTS preload list, so browsers *require* HTTPS for this
-  domain — there is no working http:// fallback. That is fine here, but it means
+  domain; there is no working http:// fallback. That is fine here, but it means
   the certificate must be live before the site loads at all.
 - Canonicalize on the apex: **Rules → Redirect Rules** → new rule,
   `Hostname equals www.nitishmane.dev` → dynamic redirect to
   `concat("https://nitishmane.dev", http.request.uri.path)`, status **301**.
 
-**5. Optional — email at the domain**
+**5. Optional: email at the domain**
 
 Cloudflare **Email Routing** gives you `hello@nitishmane.dev` forwarding to a
 personal inbox for free, which is nicer on a portfolio than a raw Gmail address.
@@ -97,7 +97,7 @@ It adds its own MX records automatically.
 
 Résumé content is in. Remaining:
 
-- [ ] `assets/resume.pdf` — the `/resume` shortlink and both Résumé buttons 404 without it
+- [ ] `assets/resume.pdf`, without which the `/resume` shortlink and both Résumé buttons 404
 - [ ] `assets/og.png` (1200×630 social preview image)
 - [ ] Confirm the public contact address; Cloudflare Email Routing can forward
       `hello@nitishmane.dev` to a personal inbox for free
