@@ -1,4 +1,4 @@
-# Cloudflare Pages response headers. Syntax: a path pattern, then indented headers.
+# Cloudflare response headers. Syntax: a path pattern, then indented headers.
 
 /*
   X-Content-Type-Options: nosniff
@@ -7,7 +7,9 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
   # 'unsafe-inline' is required by the pre-paint theme script in <head> and the
   # inline <style> in 404.html. Tighten to hashes if those ever stop changing.
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  # static.cloudflareinsights.com is the Web Analytics beacon Cloudflare injects
+  # into every response; without it here our own CSP blocks Cloudflare's analytics.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
 
 # Fingerprint-free assets: revalidate so edits ship immediately.
 /styles.css

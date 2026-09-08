@@ -7,8 +7,8 @@ Cloudflare Workers static assets from this GitHub repository.
 Visitor → Cloudflare DNS → Cloudflare Workers (static assets) → this GitHub repo (main)
 ```
 
-Live at `nitish-portfolio.manenitish06.workers.dev` until the custom domain is
-attached.
+Live at `nitishmane.dev`, with `nitish-portfolio.manenitish06.workers.dev` still
+serving as the direct Worker URL.
 
 ## Files
 
