@@ -341,6 +341,40 @@ code {
 .card__body { color: var(--text-soft); font-size: .9375rem; }
 .card .tags { margin-top: auto; padding-top: .25rem; }
 
+/* Live projects sit above the platform work, wider and un-numbered. */
+.work__label {
+  font-family: var(--font-mono); font-size: .75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--text-faint); margin: 0 0 1rem;
+}
+.cards + .work__label { margin-top: 2.5rem; }
+.cards--live { grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); }
+/* Each .cards resets the counter, so the platform grid still starts at 01. */
+.card--live .card__title::before { content: none; }
+.card--featured { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.card__badge {
+  align-self: flex-start; margin: 0;
+  font-family: var(--font-mono); font-size: .6875rem; font-weight: 500;
+  letter-spacing: .04em; text-transform: uppercase;
+  padding: .25rem .6rem; border-radius: 999px;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+/* The title link stretches over the whole card so it is one click target. */
+.card__link { color: inherit; text-decoration: none; }
+.card__link::after { content: ""; position: absolute; inset: 0; }
+.card__link:hover { color: var(--accent); }
+.card__link:focus-visible { outline: none; }
+.card--live:has(.card__link:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.card__url {
+  font-family: var(--font-mono); font-size: .75rem; color: var(--text-faint);
+  margin: 0; transition: color .2s ease;
+}
+.card--live:hover .card__url { color: var(--accent); }
+.card--live .card__url { margin-top: auto; }
+.card--live .tags { margin-top: 0; }
+
 /* ── Contact ── */
 .section--contact { text-align: center; }
 .section--contact .section__title { justify-content: center; }
@@ -415,6 +449,8 @@ code {
   .role { break-inside: avoid; page-break-inside: avoid; padding: 0; margin: 0 0 1rem; }
   .card { break-inside: avoid; page-break-inside: avoid; border-color: #ccc; }
   .card::before, .role:hover { display: none; }
+  .card__badge { color: #000; border-color: #999; background: none; }
+  .card__url { color: #555; }
   a { text-decoration: none; }
   .section__title::after { display: none; }
 }
