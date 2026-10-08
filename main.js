@@ -111,6 +111,12 @@
   window.addEventListener('resize', onScroll, { passive: true });
   onFrame();
 
+  /* ── Print the collapsed earlier roles too ── */
+  window.addEventListener('beforeprint', function () {
+    Array.prototype.forEach.call(document.querySelectorAll('details'),
+      function (d) { d.open = true; });
+  });
+
   /* ── Footer year ── */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());

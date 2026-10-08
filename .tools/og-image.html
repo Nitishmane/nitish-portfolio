@@ -25,17 +25,17 @@
     font-size: 20px; letter-spacing: .14em; text-transform: uppercase;
     color: #6e747f; margin-bottom: auto;
   }
+  /* Same hierarchy as the site hero: the statement leads, the name is its byline. */
+  .name {
+    font-size: 30px; font-weight: 500; color: #7fd1b9;
+    letter-spacing: .01em; margin: 34px 0 16px;
+  }
   h1 {
     font-family: "Instrument Serif", Georgia, serif;
-    font-size: 104px; font-weight: 400; line-height: 1;
-    letter-spacing: -.02em; margin-bottom: 26px;
+    font-size: 70px; font-weight: 400; line-height: 1.04;
+    letter-spacing: -.02em; max-width: 19ch;
   }
-  .role {
-    font-size: 34px; font-weight: 500; color: #7fd1b9;
-    letter-spacing: -.01em; margin-bottom: 18px;
-  }
-  .blurb { font-size: 27px; line-height: 1.42; color: #a2a8b4; max-width: 33ch; }
-  .tags { display: flex; gap: 12px; margin-top: 44px; flex-wrap: wrap; }
+  .tags { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
   .tags span {
     border: 1px solid #24272d; border-radius: 999px;
     padding: 8px 18px; font-size: 19px; color: #a2a8b4;
@@ -44,9 +44,8 @@
 <div class="rule"></div>
 <div class="glow"></div>
 <div class="domain">nitishmane.dev</div>
-<h1>Nitish Mane</h1>
-<div class="role">Staff Infrastructure Engineer at Philo</div>
-<div class="blurb">Cloud platforms for live video, connected vehicles, and data products.</div>
+<div class="name">Nitish Mane · Staff Infrastructure Engineer</div>
+<h1>I build and run the cloud platforms behind live video, connected vehicles, and data products.</h1>
 <div class="tags">
   <span>Kubernetes</span><span>Terraform</span><span>ArgoCD</span><span>AWS</span><span>Observability</span>
 </div>

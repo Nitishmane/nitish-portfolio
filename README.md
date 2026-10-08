@@ -22,6 +22,7 @@ serving as the direct Worker URL.
 | `_redirects` | Vanity shortlinks like `/github` (Pages-specific) |
 | `robots.txt`, `sitemap.xml` | Search indexing |
 | `assets/` | `favicon.svg`, `og.png` |
+| `assets/work/` | 960×600 screenshots of the live projects (see below) |
 | `.tools/` | Source for the OG image; excluded from the deploy by `.assetsignore` |
 | `.assetsignore` | Files that must not be published, `.git` above all |
 | `wrangler.jsonc` | Worker name and the 404 handling Pages would have done for free |
@@ -127,6 +128,20 @@ same fonts and palette as the site. After editing the role or blurb in that file
 
 Chrome pulls Instrument Serif and Inter from Google Fonts at render time, so run
 it online; offline it silently falls back to Georgia and Helvetica.
+
+## Refreshing the project screenshots
+
+`assets/work/*.jpg` are headless-Chrome captures of each live project, resized
+with `sips`. Re-run when a project's look changes:
+
+```sh
+for p in scraper-factory-top20 trueforge-agents serp-hack trending-funny-domains; do
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=10000 \
+    --screenshot=/tmp/$p.png --window-size=1280,800 "https://$p.vercel.app/"
+  sips -s format jpeg -s formatOptions 78 -z 600 960 /tmp/$p.png --out assets/work/$p.jpg
+done
+```
 
 ## Remaining
 
