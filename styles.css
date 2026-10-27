@@ -485,6 +485,20 @@ code {
   white-space: nowrap;
 }
 
+/* Article rows carry a small preview image from the publisher. */
+.entry--thumb { grid-template-columns: 6.5rem 7rem 1fr auto; align-items: center; }
+.entry__thumb {
+  display: block; width: 7rem; aspect-ratio: 2 / 1; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--accent-soft);
+}
+.entry__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s var(--ease); }
+.entry__thumb:hover img { transform: scale(1.04); }
+.entry__thumb--text {
+  display: grid; place-items: center; padding: .25rem; text-align: center; text-decoration: none;
+  font-family: var(--font-mono); font-size: .625rem; letter-spacing: .06em; text-transform: uppercase;
+  line-height: 1.3; color: var(--accent);
+}
+
 /* ── Contact ── */
 .section--contact { text-align: center; }
 .section--contact .section__title { justify-content: center; }
@@ -523,6 +537,7 @@ code {
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero > * { animation: none; }
   .card--live:hover .card__shot { transform: none; }
+  .entry__thumb:hover img { transform: none; }
   .card:hover, .btn:hover { transform: none; }
   .status-dot { animation: none; }
   .progress { transition: none; }
@@ -539,6 +554,8 @@ code {
   .stats { grid-template-columns: repeat(2, 1fr); }
   .entry { grid-template-columns: 1fr auto; }
   .entry__kind { grid-column: 1 / -1; }
+  .entry--thumb { grid-template-columns: 5.5rem 1fr auto; }
+  .entry--thumb .entry__thumb { width: 5.5rem; }
   .site-footer { flex-direction: column; }
 
   /* Nav stays reachable on a phone: one scrollable row, no menu to open. */
