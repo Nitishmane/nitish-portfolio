@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d1224">
 <title>Nitish Mane · Software Engineer</title>
 
 <!-- Canonical host: nitishmane.dev (www redirects to it) -->
@@ -18,7 +20,7 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="/styles.css">
 
 <script type="application/ld+json">
@@ -41,11 +43,6 @@
   // Scroll-reveal styles only apply once we know JS is running, so a failed
   // main.js leaves the page readable instead of blank.
   document.documentElement.classList.add('js');
-  // Set theme before first paint to avoid a flash of the wrong background.
-  try {
-    var t = localStorage.getItem('theme');
-    if (t) document.documentElement.setAttribute('data-theme', t);
-  } catch (e) {}
 </script>
 </head>
 <body>
@@ -63,10 +60,6 @@
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
-      <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></g></svg>
-      <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>
-    </button>
   </nav>
 </header>
 
@@ -74,39 +67,60 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <p class="hero__status">
-      <span class="status-dot" aria-hidden="true"></span>
-      Software Engineer at Philo &middot; San Francisco Bay Area
-    </p>
-    <h1 class="hero__title">Nitish Mane</h1>
-    <p class="hero__statement">
-      I build and run the cloud platforms behind live video, connected vehicles, and data products.
-    </p>
-    <p class="hero__lede">
-      At Philo I built HeyClaude, an AI SRE agent that debugs production alerts on its own.
-      Ten years across AWS, GCP, Azure, and OCI, most of it spent making Kubernetes, Terraform,
-      and observability boring enough that nobody has to think about them.
-    </p>
+    <div class="hero__copy">
+      <p class="hero__status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Software Engineer at Philo &middot; San Francisco Bay Area
+      </p>
+      <h1 class="hero__title">Nitish Mane</h1>
+      <p class="hero__statement">
+        I build and run the <span class="hl">cloud platforms</span> behind live video, connected vehicles, and data products.
+      </p>
+      <p class="hero__lede">
+        At Philo I built HeyClaude, an AI SRE agent that debugs production alerts on its own.
+        Ten years across AWS, GCP, Azure, and OCI, most of it spent making Kubernetes, Terraform,
+        and observability boring enough that nobody has to think about them.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#work">View work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+      <ul class="hero__links">
+        <li><a href="https://github.com/Nitishmane">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nitish-mane/">LinkedIn</a></li>
+        <li><a href="mailto:manenitish06@gmail.com">Email</a></li>
+      </ul>
+    </div>
+    <div class="hero__code" aria-hidden="true">
+      <div class="code-card">
+        <div class="code-card__bar"><span></span><span></span><span></span></div>
+<pre class="code-card__body"><code><span class="k">const</span> engineer <span class="k">=</span> <span class="p">{</span>
+  name<span class="p">:</span> <span class="s">'Nitish Mane'</span><span class="p">,</span>
+  role<span class="p">:</span> <span class="s">'Software Engineer @ Philo'</span><span class="p">,</span>
+  clouds<span class="p">: [</span><span class="s">'AWS'</span><span class="p">,</span> <span class="s">'GCP'</span><span class="p">,</span> <span class="s">'Azure'</span><span class="p">,</span> <span class="s">'OCI'</span><span class="p">],</span>
+  tools<span class="p">: [</span><span class="s">'Kubernetes'</span><span class="p">,</span> <span class="s">'Terraform'</span><span class="p">,</span>
+    <span class="s">'ArgoCD'</span><span class="p">,</span> <span class="s">'Grafana'</span><span class="p">],</span>
+  yearsInProd<span class="p">:</span> <span class="b">10</span><span class="p">,</span>
+  onCall<span class="p">:</span> <span class="b">true</span><span class="p">,</span>
+  shipsAgents<span class="p">:</span> <span class="b">true</span><span class="p">,</span>
+  <span class="f">hireable</span><span class="p">:</span> <span class="b">function</span><span class="p">() {</span>
+    <span class="b">return</span> <span class="t">this.</span>onCall <span class="s">&amp;&amp;</span>
+      <span class="t">this.</span>clouds<span class="p">.</span>length <span class="s">&gt;=</span> <span class="b">4</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">};</span><span class="caret"></span></code></pre>
+      </div>
+    </div>
     <dl class="stats">
       <div class="stats__item"><dt>Cloud spend cut at Lucid</dt><dd>$100k<small>/mo</small></dd></div>
       <div class="stats__item"><dt>Environment provisioning</dt><dd>weeks <span aria-label="to">→</span> hours</dd></div>
       <div class="stats__item"><dt>Hadoop estate operated</dt><dd>8&nbsp;PB</dd></div>
       <div class="stats__item"><dt>Years across AWS, GCP, Azure, OCI</dt><dd>10</dd></div>
     </dl>
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="#work">View work</a>
-      <a class="btn" href="#contact">Get in touch</a>
-    </div>
-    <ul class="hero__links">
-      <li><a href="https://github.com/Nitishmane">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/nitish-mane/">LinkedIn</a></li>
-      <li><a href="mailto:manenitish06@gmail.com">Email</a></li>
-    </ul>
   </section>
 
   <!-- ══ ABOUT ══ -->
   <section id="about" class="section">
-    <h2 class="section__title reveal"><span class="section__num">01</span> About</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">01</span> About</span></h2>
     <div class="prose reveal">
       <p>
         I work on the layer nobody sees until it breaks: clusters, networks, pipelines, and the
@@ -123,46 +137,17 @@
         operate platforms under real load.
       </p>
     </div>
-    <div class="skills reveal">
-      <div class="skills__group">
-        <h3>Languages</h3>
-        <ul class="tags">
-          <li>Python</li><li>Go</li><li>Java</li><li>Bash</li><li>SQL</li><li>HCL</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Platform &amp; tooling</h3>
-        <ul class="tags">
-          <li>Kubernetes</li><li>Terraform</li><li>ArgoCD</li><li>Helm</li>
-          <li>Cluster API</li><li>GitLab CI</li><li>Atlantis</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Observability</h3>
-        <ul class="tags">
-          <li>Grafana</li><li>Prometheus</li><li>Thanos</li><li>VictoriaMetrics</li>
-          <li>OpenSLO / Sloth</li><li>PagerDuty</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Cloud</h3>
-        <ul class="tags">
-          <li>AWS</li><li>GCP</li><li>Azure</li><li>OCI</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Data &amp; storage</h3>
-        <ul class="tags">
-          <li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>Kafka</li>
-          <li>Redshift</li><li>Neo4j</li><li>S3 / ADLS / GCS</li><li>HDFS</li>
-        </ul>
+    <div class="marquee reveal">
+      <div class="marquee__inner">
+        <ul class="marquee__track" aria-label="Skills"><li>Python</li><li>Go</li><li>Java</li><li>Bash</li><li>SQL</li><li>HCL</li><li>Kubernetes</li><li>Terraform</li><li>ArgoCD</li><li>Helm</li><li>Cluster API</li><li>GitLab CI</li><li>Atlantis</li><li>Grafana</li><li>Prometheus</li><li>Thanos</li><li>VictoriaMetrics</li><li>OpenSLO / Sloth</li><li>PagerDuty</li><li>AWS</li><li>GCP</li><li>Azure</li><li>OCI</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>Kafka</li><li>Redshift</li><li>Neo4j</li><li>S3 / ADLS / GCS</li><li>HDFS</li></ul>
+        <ul class="marquee__track" aria-hidden="true"><li>Python</li><li>Go</li><li>Java</li><li>Bash</li><li>SQL</li><li>HCL</li><li>Kubernetes</li><li>Terraform</li><li>ArgoCD</li><li>Helm</li><li>Cluster API</li><li>GitLab CI</li><li>Atlantis</li><li>Grafana</li><li>Prometheus</li><li>Thanos</li><li>VictoriaMetrics</li><li>OpenSLO / Sloth</li><li>PagerDuty</li><li>AWS</li><li>GCP</li><li>Azure</li><li>OCI</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>Kafka</li><li>Redshift</li><li>Neo4j</li><li>S3 / ADLS / GCS</li><li>HDFS</li></ul>
       </div>
     </div>
   </section>
 
   <!-- ══ EXPERIENCE ══ -->
   <section id="experience" class="section">
-    <h2 class="section__title reveal"><span class="section__num">02</span> Experience</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">02</span> Experience</span></h2>
     <ol class="timeline">
 
       <li class="role reveal">
@@ -243,7 +228,7 @@
 
   <!-- ══ SELECTED WORK ══ -->
   <section id="work" class="section">
-    <h2 class="section__title reveal"><span class="section__num">03</span> Selected work</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">03</span> Selected work</span></h2>
     <h3 class="work__label reveal">Live projects</h3>
     <div class="cards cards--live">
 
@@ -382,7 +367,7 @@
 
   <!-- ══ SPEAKING & RECOGNITION ══ -->
   <section id="speaking" class="section">
-    <h2 class="section__title reveal"><span class="section__num">04</span> Speaking &amp; recognition</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">04</span> Speaking &amp; recognition</span></h2>
     <h3 class="work__label reveal">Speaking</h3>
     <ul class="entries reveal">
       <li class="entry">
@@ -620,7 +605,7 @@
 
   <!-- ══ EDUCATION & CERTIFICATIONS ══ -->
   <section id="education" class="section">
-    <h2 class="section__title reveal"><span class="section__num">05</span> Education &amp; certifications</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">05</span> Education &amp; certifications</span></h2>
     <ol class="timeline">
 
       <li class="role reveal">
@@ -659,7 +644,7 @@
 
   <!-- ══ CONTACT ══ -->
   <section id="contact" class="section section--contact">
-    <h2 class="section__title reveal"><span class="section__num">06</span> Contact</h2>
+    <h2 class="section__title reveal"><span class="section__pill"><span class="section__num">06</span> Contact</span></h2>
     <p class="contact__lede reveal">
       Happy to talk about platform engineering, agentic tooling for operations, or speaking at
       your event. Email is the fastest way to reach me.
@@ -678,7 +663,7 @@
 
 <footer class="site-footer">
   <p>© <span id="year">2026</span> Nitish Mane</p>
-  <p>Hand-written HTML and CSS, no framework. Set in Instrument Serif and Inter,
+  <p>Hand-written HTML and CSS, no framework. Set in Inter,
      deployed on <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>.</p>
 </footer>
 

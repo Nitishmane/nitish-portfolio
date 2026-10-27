@@ -1,44 +1,17 @@
-/* Portfolio behavior: theme toggle, reading progress, staggered reveal,
-   active nav, sticky header. */
+/* Portfolio behavior: reading progress, staggered reveal, active nav,
+   sticky header. */
 (function () {
   'use strict';
 
   var root = document.documentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Theme toggle ────────────────────────────────────────
-     No stored value means "follow the system", which is the
-     default state; the toggle then pins the opposite of
-     whatever is currently on screen. */
-  var toggle = document.querySelector('.theme-toggle');
-
-  function currentTheme() {
-    var pinned = root.getAttribute('data-theme');
-    if (pinned === 'dark' || pinned === 'light') return pinned;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function syncToggle() {
-    if (toggle) toggle.setAttribute('aria-pressed', String(currentTheme() === 'dark'));
-  }
-
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var next = currentTheme() === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      syncToggle();
-    });
-    syncToggle();
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncToggle);
-  }
-
   /* ── Scroll reveal, staggered within each group ──────────
      Siblings that animate together get an incrementing --i so
      they arrive in sequence rather than all at once. */
   var revealables = document.querySelectorAll('.reveal');
 
-  Array.prototype.forEach.call(document.querySelectorAll('.cards, .timeline, .skills, .hero'),
+  Array.prototype.forEach.call(document.querySelectorAll('.cards, .timeline'),
     function (group) {
       Array.prototype.forEach.call(group.querySelectorAll(':scope > .reveal'),
         function (el, i) { el.style.setProperty('--i', Math.min(i, 6)); });
